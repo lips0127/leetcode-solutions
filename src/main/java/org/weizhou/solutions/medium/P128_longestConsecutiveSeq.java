@@ -1,6 +1,6 @@
 package org.weizhou.solutions.medium;
 
-import org.weizhou.solutions.core.Solution;
+import org.weizhou.solutions.core.LeetCodeSolution;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -49,7 +49,7 @@ import java.util.stream.Collectors;
  * 50.0%
  */
 
-public class P128_longestConsecutiveSeq implements Solution {
+public class P128_longestConsecutiveSeq implements LeetCodeSolution {
     // 时间复杂度不足，在78/81个用例无法通过
     public int longestConsecutiveSolve1(int[] nums) {
         if (nums.length == 0) return 0;

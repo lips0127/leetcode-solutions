@@ -4,7 +4,8 @@ import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
-import org.weizhou.solutions.core.Solution;
+import org.weizhou.solutions.core.LeetCodeSolution;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,19 +17,19 @@ public class RunnerTest {
     public List<DynamicTest> generateTests() throws Exception {
         List<DynamicTest> tests = new ArrayList<DynamicTest>();
         Reflections reflections = new Reflections(new ConfigurationBuilder()
-                .setUrls(ClasspathHelper.forPackage("org.weizhou.solutions"))
+                .setUrls(ClasspathHelper.forPackage("org.weizhou.solutions.core"))
                 .setScanners(Scanners.SubTypes)
                 .filterInputsBy(s -> s.endsWith(".class"))
         );
-        // 自动发现所有Solution实现类
-        Set<Class<? extends Solution>> subTypesOfSolutions = reflections.getSubTypesOf(Solution.class);
-        for (Class<?> clazz : subTypesOfSolutions) {
-            Solution solutionInstance = (Solution) clazz.getDeclaredConstructor().newInstance();
+        // 自动发现所有LeetCodeSolution实现类
+        Set<Class<? extends LeetCodeSolution>> subTypesOfLeetCodeSolutions = reflections.getSubTypesOf(LeetCodeSolution.class);
+        for (Class<?> clazz : subTypesOfLeetCodeSolutions) {
+            LeetCodeSolution LeetCodeSolutionInstance = (LeetCodeSolution) clazz.getDeclaredConstructor().newInstance();
             tests.add(DynamicTest.dynamicTest(
                     clazz.getSimpleName(),
                     () -> {
                         System.out.println("-- Testing:" + clazz.getName() + " --");
-                        solutionInstance.execute();
+                        LeetCodeSolutionInstance.execute();
                     }
             ));
         }

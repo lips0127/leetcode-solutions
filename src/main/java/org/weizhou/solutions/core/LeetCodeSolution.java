@@ -1,6 +1,6 @@
 package org.weizhou.solutions.core;
 
-public interface Solution {
+public interface LeetCodeSolution {
     default void execute() {
         try {
             System.out.println("[" + this.getClass().getSimpleName() + "] ");
