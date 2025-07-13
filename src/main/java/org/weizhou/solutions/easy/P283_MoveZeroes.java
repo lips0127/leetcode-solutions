@@ -1,7 +1,6 @@
-package org.weizhou.solutions.easy;
+package java.org.weizhou.solutions.easy;
 
-import org.weizhou.solutions.core.LeetCodeSolution;
-
+import java.org.weizhou.solutions.core.LeetCodeSolution;
 import java.util.Arrays;
 
 /**

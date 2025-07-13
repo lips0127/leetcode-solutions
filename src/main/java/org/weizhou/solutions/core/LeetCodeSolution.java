@@ -1,4 +1,4 @@
-package org.weizhou.solutions.core;
+package java.org.weizhou.solutions.core;
 
 public interface LeetCodeSolution {
     default void execute() {
