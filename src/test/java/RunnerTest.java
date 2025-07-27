@@ -4,9 +4,9 @@ import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
-import org.weizhou.solutions.core.LeetCodeSolution;
 
 
+import java.org.weizhou.solutions.core.LeetCodeSolution;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
